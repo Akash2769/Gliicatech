@@ -4,7 +4,7 @@
 :root { 
   --background-color: #ffffff; 
   --default-color: #313030; 
-  --heading-color: #473d3a; 
+  --heading-color: #2c3e50; 
   --accent-color: #1960d0; 
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
@@ -12,7 +12,10 @@
   --nav-hover-color: #1960d0;
   --nav-mobile-background-color: #ffffff; 
   --nav-dropdown-background-color: #ffffff;  
-  --nav-dropdown-hover-color: #1960d0; 
+  --nav-dropdown-hover-color: #1960d0;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
 } 
 
 :root {
@@ -374,6 +377,7 @@ h6 {
     display: block;
   }
 }
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -751,8 +755,41 @@ section,
 .applications-section {
   padding: 50px 0;
 }
+.navmenu a {
+  position: relative;
+}
+.navmenu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 10px;
+  left: 20px;
+  background-color: var(--accent-color);
+  transition: 0.3s;
+}
+.navmenu a.active::after {
+  width: 30px; /* Underline appears only on active links */
+}
+/* Premium Table Styling */
+.table-custom {
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
 
-/* --- Client Logo Slider --- */
+.table-custom thead {
+  background-color: #1960d0; /* Brand Blue */
+  color: white;
+}
+
+/* Call-to-action refinement */
+.custom-highlight {
+  color: #b02a37; 
+  background: #fff5f5;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 5px solid #b02a37;
+}
 .client-slider-wrapper {
     position: relative;
     width: 100%;

@@ -1,10 +1,12 @@
 
 (function() {
   "use strict";
-  function toggleScrolled() {
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-  }
+function toggleScrolled() {
+  const selectHeader = document.querySelector('#header');
+  const body = document.querySelector('body');
+  // Add 'scrolled' class after 100px of scrolling
+  window.scrollY > 100 ? body.classList.add('scrolled') : body.classList.remove('scrolled');
+}
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
