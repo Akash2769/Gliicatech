@@ -834,7 +834,6 @@ section,
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .slide {
-        width: 150px;
         padding: 0 20px;
     }
     .client-track {
